@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Layout example</title>
+    <link rel="stylesheet" href="../css/drip.css">
+
+    <style>
+        header {
+            border-block-end: 1px solid var(--drip-color-neutral);
+        }
+    </style>
+</head>
+<body>
+
+<!-- full-width header -->
+<header class="container-full">
+    <a href="#" aria-label="Home">
+        <img alt="" src="logo.svg" style="inline-size:2rem;block-size:2rem;">
+    </a>
+
+    <nav aria-label="Primary">
+        <ul>
+            <li><a href="#" aria-current="page">Home</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <form>
+        <label class="sr-only" for="search">Search</label>
+        <input id="search" type="search">
+    </form>
+
+    <form>
+        <label class="sr-only" for="locale1">Direction</label>
+        <select id="locale1">
+            <option>Anatolian Hieroglyphs</option>
+            <option selected>English</option>
+            <option>Korean</option>
+        </select>
+    </form>
+</header>
+
+<!-- centered header -->
+<header>
+    <div class="container">
+        <a href="#" aria-label="Home">
+            <img alt="" src="logo.svg" style="inline-size:2rem;block-size:2rem;">
+        </a>
+
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="#" aria-current="page">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+
+        <form>
+            <label class="sr-only" for="locale2">Direction</label>
+            <select id="locale2">
+                <option>Anatolian Hieroglyphs</option>
+                <option selected>English</option>
+                <option>Korean</option>
+            </select>
+        </form>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <h1>Layout example</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Suspendisse at libero id orci elementum sagittis. Sed eget posuere dolor. Nam dapibus libero eget sapien tincidunt consequat. Nullam condimentum neque diam, sed semper dui luctus in. Fusce justo dolor, pretium id ullamcorper vitae, porta dignissim ex. Ut risus nisi, maximus nec vehicula id, scelerisque quis erat. Suspendisse potenti. Donec a eleifend quam. Vestibulum at tincidunt felis. Vestibulum eget felis sollicitudin, fringilla neque et, mollis sapien. Vestibulum varius purus a eleifend luctus. Cras eget consectetur nulla, nec fermentum magna. Nullam malesuada neque sed vulputate tempus. Curabitur ac ante felis.</p>
+
+        <h2>Secondary header</h2>
+        <p>Aliquam erat volutpat. Mauris ultrices diam sed urna congue, a rutrum nisi fermentum. Proin justo mi, mattis id placerat quis, hendrerit viverra sem. Nam consequat dignissim consequat. Quisque tempus, urna in sollicitudin efficitur, massa elit aliquet mauris, in tincidunt justo nibh nec ligula. Integer fringilla risus a arcu ullamcorper, ultricies vulputate purus laoreet. Nam sed quam sit amet magna consectetur dapibus ac id erat.</p>
+    </main>
+</div>
+
+</body>
+</html>

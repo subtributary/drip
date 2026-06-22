@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "../settings" as *;
+
+.container, .container-full {
+  padding: var(#{$css-var-prefix}spacing);
+}
+
+.container {
+  margin-inline: auto;
+  max-width: var(#{$css-var-prefix}container-width);
+}
+
+.container-full {
+}
+
+header>.container, header>.container-full,
+footer>.container, footer>.container-full {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav>ul {
+    padding: 0;
+    display: flex;
+
+    &>li {
+      display: block;
+
+      &>a {
+        display: block;
+        padding: var(#{$css-var-prefix}spacing);
+        color: inherit;
+        text-decoration: none;
+
+        &[aria-current=page],
+        &:hover {
+          color: var(#{$css-var-prefix}color-link);
+        }
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 var(#{$css-var-prefix}spacing);
+
+  &>* {
+    flex: 1 1 0;
+  }
+}

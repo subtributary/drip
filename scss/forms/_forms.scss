@@ -1,0 +1,71 @@
+@use "sass:map";
+@use "../settings" as *;
+
+$button-elements: button, "input[type=button]", "input[type=reset]", "input[type=submit]", "input[type=file]::file-selector-button";
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  &>*:not(:last-child) {
+    margin-block-end: var(#{$css-var-prefix}padding);
+  }
+
+  &>.help-text {
+    color: var(#{$css-var-prefix}color-text-muted);
+    margin-block-end: var(#{$css-var-prefix}spacing);
+  }
+}
+
+label {
+  display: block;
+  margin-block-end: var(#{$css-var-prefix}padding);
+}
+
+button, input, meter, progress, select, textarea {
+  display: block;
+  margin-block-end: var(#{$css-var-prefix}spacing);
+  width: 100%;
+}
+
+#{$button-elements}, input:not([type=file]), select, textarea {
+  background-color: var(#{$css-var-prefix}color-input);
+  border-color: var(#{$css-var-prefix}color-border);
+  border-radius: var(#{$css-var-prefix}padding);
+  border-style: solid;
+  border-width: 2px;
+  color: var(#{$css-var-prefix}color-text);
+  padding: var(#{$css-var-prefix}padding);
+}
+
+#{$button-elements} {
+  background-color: var(#{$css-var-prefix}color-button-background);
+  color: var(#{$css-var-prefix}color-button-text);
+  border-color: var(#{$css-var-prefix}color-button-background);
+
+  &:hover {
+    border-color: var(#{$css-var-prefix}color-link);
+    color: var(#{$css-var-prefix}color-link);
+  }
+}
+
+input[type=checkbox], input[type=radio] {
+  display: inline;
+  width: auto;
+
+  & + label {
+    display: inline;
+  }
+}
+
+input[type=search] {
+  background-image: var(#{$css-var-prefix}icon-search);
+  background-position: center left var(#{$css-var-prefix}padding);
+  background-repeat: no-repeat;
+  background-size: var(#{$css-var-prefix}icon-size) auto;
+
+  padding-left: calc(
+    var(#{$css-var-prefix}padding) * 2 +
+    var(#{$css-var-prefix}icon-size));
+}
+

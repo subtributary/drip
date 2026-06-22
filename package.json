@@ -1,0 +1,19 @@
+{
+  "name": "drip",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CSS library",
+  "scripts": {
+    "build:css": "sass scss:css --no-source-map",
+    "build:watch": "sass scss:css --watch --no-source-map",
+    "build": "npm run build:css",
+    "format:scss": "npx prettier --check scss/**/*.scss --write",
+    "format": "npm run format:scss"
+  },
+  "dependencies": {
+    "sass": "^1.101.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.4"
+  }
+}

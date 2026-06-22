@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drip CSS Documentation</title>
+    <link rel="stylesheet" href="../css/drip.css">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <a href="#" aria-label="Index">
+            <img alt="" src="logo.svg" style="width:2rem;height:2rem;">
+        </a>
+
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="overview.html">Overview</a></li>
+                <li><a href="styles.html" aria-current="page">Test</a></li>
+            </ul>
+        </nav>
+
+        <form>
+            <label class="sr-only" for="locale1">Direction</label>
+            <select id="locale1">
+                <option>Anatolian Hieroglyphs</option>
+                <option selected>English</option>
+                <option>Korean</option>
+            </select>
+        </form>
+    </div>
+</header>
+
+<main class="container">
+    <h1>Styles</h1>
+    <p>
+        This webpage is a demonstration and test of the default Drip stylesheet.
+    </p>
+
+    <section>
+        <h2>Typography</h2>
+
+        <p>
+            Most inline elements are not modified from the browser defaults.
+        </p>
+        <p>
+            The inline elements that are modified are:
+        </p>
+        <ul>
+            <li><code>&lt;a href=""&gt;</code> &mdash;
+                <a href="#">links</a> are styled for better color contrast,
+                and an icon is appended to <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a">external links</a>.
+            </li>
+            <li><code>&lt;sub&gt;</code> &mdash; subscript, as in C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>,
+                is sized explicitly to define a standard for similarly sized elements, such as the external link icon.
+            </li>
+            <li><code>&lt;sup&gt;</code> &mdash; superscript, as in 4<sup>th</sup> of July,
+                is sized explicitly to define a standard for similarly sized elements, such as the external link icon.
+            </li>
+        </ul>
+        <p>
+            The inline elements that are not modified but may have visual differences from regular text are:
+        </p>
+        <ul>
+            <li><code>&lt;abbr&gt;</code> &mdash; abbreviation (example: <abbr title="Cascading Style Sheets">CSS</abbr>)</li>
+            <li><code>&lt;b&gt;</code> &mdash; <b>bold text</b></li>
+            <li><code>&lt;code&gt;</code> &mdash; <code>computer code</code></li>
+            <li><code>&lt;del&gt;</code> &mdash; <del>deleted text</del></li>
+            <li><code>&lt;dfn&gt;</code> &mdash; <dfn title="A statement that explains the meaning of a word.">definition</dfn></li>
+            <li><code>&lt;em&gt;</code> &mdash; <em>emphasized text</em></li>
+            <li><code>&lt;i&gt;</code> &mdash; <i>italicized text</i></li>
+            <li><code>&lt;ins&gt;</code> &mdash; <ins>inserted text</ins></li>
+            <li><code>&lt;kbd&gt;</code> &mdash; textual user input (example: <kbd>Ctrl</kbd> + <kbd>F5</kbd>)</li>
+            <li><code>&lt;mark&gt;</code> &mdash; <mark>marked text</mark></li>
+            <li><code>&lt;q&gt;</code> &mdash; <q>quoted text</q></li>
+            <li><code>&lt;ruby&gt;</code> &mdash; annotations (example: <ruby>漢 <rp>(</rp><rt>Kan</rt><rp>)</rp> 字 <rp>(</rp><rt>ji</rt><rp>)</rp></ruby>)</li>
+            <li><code>&lt;s&gt;</code> &mdash; <s>strikethrough</s></li>
+            <li><code>&lt;strong&gt;</code> &mdash; <strong>important text</strong></li>
+            <li><code>&lt;u&gt;</code> &mdash; <u>non-textual annotation</u></li>
+            <li><code>&lt;var&gt;</code> &mdash; <var>variable</var></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Forms</h2>
+        <form>
+            <h3>Text and number input</h3>
+            <div class="form-group">
+                <label for="text">Text</label>
+                <input type="text" id="text" name="text">
+                <div class="help-text">This is help text.</div>
+            </div>
+            <label for="search">Search</label><input type="search" id="search" name="search">
+            <label for="email">Email</label><input type="email" id="email" name="email">
+            <label for="password">Password</label><input type="password" id="password" name="password">
+            <label for="textarea">Textarea</label><textarea id="textarea" name="textarea"></textarea>
+            <label for="url">URL</label><input type="url" id="url" name="url">
+            <label for="number">Number</label><input type="number" id="number" name="number">
+            <label for="tel">Telephone</label><input type="tel" id="tel" name="tel">
+
+            <h3>Date and time input</h3>
+            <div class="row">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="date">
+                </div>
+                <div class="form-group">
+                    <label for="datetime-local">Date and time</label>
+                    <input type="datetime-local" id="datetime-local" name="datetime-local">
+                </div>
+                <div class="form-group">
+                    <label for="time">Time</label>
+                    <input type="time" id="time" name="time">
+                </div>
+            </div>
+            <label for="week">Week</label><input type="week" id="week" name="week">
+
+            <h3>Selection input</h3>
+            <div class="row">
+                <div>
+                    <input type="checkbox" id="checkbox1" name="checkbox1" value="yes" checked>
+                    <label for="checkbox1">Checkbox</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="checkbox2" name="checkbox2" value="yes">
+                    <label for="checkbox2">Checkbox</label>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <input type="radio" id="radio1" name="radio" value="yes" checked>
+                    <label for="radio1">Radio</label>
+                </div>
+                <div>
+                    <input type="radio" id="radio2" name="radio" value="yes">
+                    <label for="radio2">Radio</label>
+                </div>
+            </div>
+
+            <label for="select">Select</label>
+            <select id="select" name="select">
+                <option>Banana</option>
+                <option selected>Cherry</option>
+                <option>Lemon</option>
+            </select>
+
+            <label for="select-multi">Select-multi</label>
+            <select id="select-multi" name="select-multi" multiple>
+                <option>Banana</option>
+                <option selected>Cherry</option>
+                <option>Lemon</option>
+            </select>
+
+            <h3>Other inputs</h3>
+            <label for="color">Color</label><input type="color" id="color" name="color">
+            <label for="file">File</label><input type="file" id="file" name="file">
+
+            <h3>Meter, progress, and range</h3>
+            <p>
+                Drip does not color meter, progress, and range elements because their style options for coloring are too limited with standard CSS.
+                We want to stick to standard CSS and avoid browser-specific hacks to style elements.
+            </p>
+            <div class="row">
+                <div class="form-group">
+                    <label for="meter-range">Slider &amp; meter</label>
+                    <input type="range" id="meter-range" name="meter-range" min="0" max="100">
+                    <meter id="meter" min="0" max="100" value="75" low="33" high="66" optimum="0">75</meter>
+                </div>
+                <script>
+                    const meterRange = document.getElementById("meter-range")
+                    const meter = document.getElementById("meter")
+                    meter.value = meterRange.value
+                    meterRange.addEventListener("input", () => { meter.textContent=meterRange.value; meter.value = meterRange.value })
+                </script>
+                <div class="form-group">
+                    <label for="progress-range">Slider &amp; progress</label>
+                    <input type="range" id="progress-range" name="progress-range" min="0" max="100">
+                    <progress id="progress" max="100" value="75">75/100</progress>
+                </div>
+                <script>
+                    const progressRange = document.getElementById("progress-range")
+                    const progress = document.getElementById("progress")
+                    progress.value = progressRange.value
+                    progressRange.addEventListener("input", () => { progress.textContent=progressRange.value+'/100'; progress.value = progressRange.value })
+                </script>
+            </div>
+
+            <h3>Buttons</h3>
+            <div class="row">
+                <input type="submit" value="Submit input">
+                <input type="reset" value="Reset input">
+                <input type="button" value="Button input">
+            </div>
+            <div class="row">
+                <button type="button">Button button</button>
+                <button type="reset">Reset button</button>
+                <button type="submit">Submit button</button>
+            </div>
+        </form>
+    </section>
+
+    <section>
+        <h2>Components</h2>
+        <p>
+            Drip is light on components because it aims to be a base style sheet.
+            The components it does have are commonly used in most websites.
+        </p>
+    </section>
+
+</main>
+
+</body>
+</html>

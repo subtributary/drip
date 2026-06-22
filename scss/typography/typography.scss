@@ -1,0 +1,44 @@
+@use "../settings" as *;
+
+a {
+  color: var(#{$css-var-prefix}color-link);
+
+  &:visited {
+    color: var(#{$css-var-prefix}color-link-visited);
+  }
+
+  &[href^=http]::after {
+    content: "";
+    display: inline-block;
+    background-color: currentColor;
+    mask-image: var(#{$css-var-prefix}icon-external);
+    mask-size: contain;
+    // This is more of a subscript than a full-sized icon.
+    width: var(#{$css-var-prefix}small-text-size);
+    height: var(#{$css-var-prefix}small-text-size);
+    margin-inline: 0.1em;
+  }
+}
+
+body {
+  background-color: var(#{$css-var-prefix}color-background);
+  color: var(#{$css-var-prefix}color-text);
+  font-family: sans-serif;
+}
+
+dl, h1, h2, h3, h4, h5, h6, ol, p, pre, ul {
+  margin-block-end: var(#{$css-var-prefix}spacing);
+}
+
+h2 {
+  border-bottom: 1px solid var(#{$css-var-prefix}color-border);
+}
+
+sub, sup {
+  font-size: var(#{$css-var-prefix}small-text-size);
+}
+
+ol, ul {
+  // The `+ 1em` should handle the width of the bullet.
+  padding-inline-start: calc(var(#{$css-var-prefix}spacing) + 1em);
+}
