@@ -17,7 +17,7 @@
         <nav aria-label="Primary">
             <ul>
                 <li><a href="overview.html">Overview</a></li>
-                <li><a href="styles.html" aria-current="page">Test</a></li>
+                <li><a href="styles.html" aria-current="page">Styles</a></li>
             </ul>
         </nav>
 
@@ -206,6 +206,40 @@
             Drip is light on components because it aims to be a base style sheet.
             The components it does have are commonly used in most websites.
         </p>
+
+        <h3>Dialog</h3>
+        <p>
+            This dialog example uses newer HTML5 attributes that are not supported in all recent browser versions.
+            In fully implemented websites, JavaScript should be used instead or as a fallback to open and close the dialog.
+        </p>
+        <button command="show-modal" commandfor="dialog">Open dialog</button>
+        <dialog id="dialog">
+            <header>
+                <h1>Dialog header text.</h1>
+                <button commandfor="dialog" command="close" aria-label="Close"></button>
+            </header>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <footer class="row">
+                <button>Button 1</button>
+                <button>Button 2</button>
+            </footer>
+        </dialog>
+
+        <h3>Dropdown</h3>
+
+        <h3>Tables</h3>
+    </section>
+
+    <section>
+        <h2><a id="classes">Classes</a></h2>
+
+        <ul>
+            <li><code>.container</code> &mdash; limits the width on horizontal flows or the height on vertical flows.</li>
+            <li><code>.container-full</code> &mdash; does not limit the size but adds padding.</li>
+            <li><code>.row</code> &mdash; arranges elements on the same line.</li>
+            <li><code>.sr-only</code> &mdash; hides an element from view but makes it readable by screen readers. <span class="sr-only">(For example, this text.)</span></li>
+            <li><code>.text-muted</code> &mdash; renders text in a <span class="text-muted">muted color</span>.</li>
+        </ul>
     </section>
 
 </main>

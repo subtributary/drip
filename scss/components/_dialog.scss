@@ -1,0 +1,36 @@
+@use "../vars" as *;
+
+dialog {
+  background-color: var(#{$css-var-prefix}color-background);
+  border-color: var(#{$css-var-prefix}color-text);
+  border-radius: var(#{$css-var-prefix}padding);
+  border-style: solid;
+  border-width: 2px;
+  padding: var(#{$css-var-prefix}spacing);
+  width: var(#{$css-var-prefix}dialog-width);
+  max-width: 100%;
+
+  &::backdrop {
+    background-color: rgb(from #767676 r g b / 0.67);
+  }
+
+  &>header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0 var(#{$css-var-prefix}spacing);
+
+    &>button[command=close] {
+      mask-image: var(#{$css-var-prefix}icon-close);
+      mask-size: contain;
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  &>footer {
+    &.row, &>.row {
+      margin-block-end: 0;
+    }
+  }
+}

@@ -1,4 +1,8 @@
-@use "../settings" as *;
+/*
+ * Tags and classes for general document markup.
+ */
+
+@use "../vars" as *;
 
 a {
   color: var(#{$css-var-prefix}color-link);
@@ -20,18 +24,14 @@ a {
   }
 }
 
-body {
-  background-color: var(#{$css-var-prefix}color-background);
-  color: var(#{$css-var-prefix}color-text);
-  font-family: sans-serif;
-}
-
 dl, h1, h2, h3, h4, h5, h6, ol, p, pre, ul {
   margin-block-end: var(#{$css-var-prefix}spacing);
 }
 
 h2 {
-  border-bottom: 1px solid var(#{$css-var-prefix}color-border);
+  border-color: var(#{$css-var-prefix}color-border);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 
 sub, sup {
@@ -41,4 +41,22 @@ sub, sup {
 ol, ul {
   // The `+ 1em` should handle the width of the bullet.
   padding-inline-start: calc(var(#{$css-var-prefix}spacing) + 1em);
+}
+
+// .sr-only makes an element only visible to screen readers.
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.text-muted {
+  color: var(#{$css-var-prefix}color-text-muted);
 }

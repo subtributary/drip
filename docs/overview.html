@@ -16,9 +16,8 @@
 
         <nav aria-label="Primary">
             <ul>
-                <li><a href="#" aria-current="page">Overview</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="overview.html" aria-current="page">Overview</a></li>
+                <li><a href="styles.html">Styles</a></li>
             </ul>
         </nav>
 
@@ -47,6 +46,11 @@
     </p>
 
     <section>
+        <h2>Getting started</h2>
+        <p>TBD</p>
+    </section>
+
+    <section>
         <h2>Layout</h2>
         <p>
             Drip adjusts the layout to the text direction and block flow direction.
@@ -55,193 +59,14 @@
         </p>
         <pre><code>&lt;html lang="en" dir="ltr" class="flow-horizontal-tb"&gt;</code></pre>
         <p>
-            Use semantic tags and <a href="specs.html#container">container classes</a> to create the basic webpage layout.
-            The `container` class limits the width on horizontal flows or the height on vertical flows.
-            The `container-full` class does not limit the size but does add some nice padding.
-        </p>
-        <p>
-            Here is an example basic layout that uses Drip:
-        </p>
-        <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot; dir=&quot;rtl&quot; class=&quot;flow-horizontal-tb&quot;&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-  &lt;title&gt;Example layout&lt;/title&gt;
-
-  &lt;!-- Include Drip CSS --&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;drip.css&quot;&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-&lt;header&gt;
-  &lt;div class=&quot;container&quot;&gt;
-    &lt;a href=&quot;#&quot; aria-label=&quot;Home&quot;&gt;
-      &lt;img alt=&quot;Drip logo&quot; src=&quot;logo.svg&quot; style=&quot;width:2rem;height:2rem;&quot;&gt;
-    &lt;/a&gt;
-    &lt;nav&gt;
-      &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;/&quot; aria-current=&quot;page&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/nav&gt;
-    &lt;div&gt;&lt;!-- Header end position; good for locale switcher or account info --&gt;&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/header&gt;
-
-&lt;main class=&quot;container&quot;&gt;
-  &lt;h1&gt;Example layout&lt;/h1&gt;
-  &lt;p&gt;The main content goes here.&lt;/p&gt;
-&lt;/main&gt;
-
-&lt;footer&gt;
-  &lt;div class=&quot;container-full&quot;&gt;
-    &lt;!-- footer content goes here --&gt;
-  &lt;/div&gt;
-&lt;/footer&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
-        <p>
-            The `header`, `main`, and `footer` elements of the <em>primary layout</em> must be direct children of the `body` element.
-            When these are more deeply nested, they usually have a more narrow semantic scope, so Drip styles them accordingly.
-        </p>
-    </section>
-
-    <section>
-        <h2>Typography</h2>
-        <p>
-            Drip sets the typography to something simple yet pleasant.
-        </p>
-
-        <h3>Inline elements</h3>
-        <p>
-            Drip styles <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/a">links</a> (<code>&lt;a href="..."&gt;</code>) to improve accessibility, especially for the dark color scheme, and to append an icon to indicate external links.
-        </p>
-        <p>
-            Drip sets the size of subscripts (<code>&lt;sub&gt;</code>, as in C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>) and superscripts (<code>&lt;sup&gt;</code>, as in 4<sup>th</sup> of July) to define a standard size for similarly sized elements, such as the external link icon on links.
-            The size that Drip uses is close to- or the same as what browsers use as a default.
-        </p>
-        <p>
-            Other inline elements are not modified from the browser defaults.
-            These that may have visual differences from regular text are listed below.
+            Create the rest of the layout with semantic tags and Drip's classes.
         </p>
         <ul>
-            <li><code>&lt;abbr&gt;</code> &mdash; abbreviation (example: <abbr title="Cascading Style Sheets">CSS</abbr>)</li>
-            <li><code>&lt;b&gt;</code> &mdash; <b>bold text</b></li>
-            <li><code>&lt;code&gt;</code> &mdash; <code>computer code</code></li>
-            <li><code>&lt;del&gt;</code> &mdash; <del>deleted text</del></li>
-            <li><code>&lt;dfn&gt;</code> &mdash; <dfn title="A statement that explains the meaning of a word.">definition</dfn></li>
-            <li><code>&lt;em&gt;</code> &mdash; <em>emphasized text</em></li>
-            <li><code>&lt;i&gt;</code> &mdash; <i>italicized text</i></li>
-            <li><code>&lt;ins&gt;</code> &mdash; <ins>inserted text</ins></li>
-            <li><code>&lt;kbd&gt;</code> textual user input (example: <kbd>Ctrl</kbd> + <kbd>F5</kbd>)</li>
-            <li><code>&lt;mark&gt;</code> &mdash; <mark>marked text</mark></li>
-            <li><code>&lt;q&gt;</code> &mdash; <q>quoted text</q></li>
-            <li><code>&lt;ruby&gt;</code> &mdash; annotations (example: <ruby>漢 <rp>(</rp><rt>Kan</rt><rp>)</rp> 字 <rp>(</rp><rt>ji</rt><rp>)</rp></ruby>)</li>
-            <li><code>&lt;s&gt;</code> &mdash; <s>strikethrough</s></li>
-            <li><code>&lt;strong&gt;</code> &mdash; <strong>important text</strong></li>
-            <li><code>&lt;u&gt;</code> &mdash; <u>non-textual annotation</u></li>
-            <li><code>&lt;var&gt;</code> &mdash; <var>variable</var></li>
+            <li><code>.container</code> &mdash; limits the width on horizontal flows or the height on vertical flows.</li>
+            <li><code>.container-full</code> &mdash; does not limit the size but adds padding.</li>
+            <li><code>.row</code> &mdash; arranges elements on the same line.</li>
         </ul>
-
-        <h3>Textual block elements</h3>
-        <p>
-            Drip sets the padding and margin of textual blocks such as paragraphs and lists.
-            This also applies to images and other media.
-            For an example, look at the block elements in this document.
-        </p>
-    </section>
-
-    <section>
-        <h2>Forms</h2>
-        <p>
-            Drip adjusts the borders and sizes of form inputs.
-        </p>
-
-
-        <form>
-            <h3>Input types</h3>
-            <label for="checkbox">Checkbox</label><input type="checkbox" id="checkbox" name="checkbox" value="yes" checked>
-            <label for="color">Color</label><input type="color" id="color" name="color">
-            <label for="date">Date</label><input type="date" id="date" name="date">
-            <label for="datetime-local">Date and time</label><input type="datetime-local" id="datetime-local" name="datetime-local">
-            <label for="email">Email</label><input type="email" id="email" name="email">
-            <label for="file">File</label><input type="file" id="file" name="file">
-            <label for="image">Image</label><input type="image" id="image" name="image" alt="Image input" src="logo.svg">
-            <label for="number">Number</label><input type="number" id="number" name="number">
-            <label for="password">Password</label><input type="password" id="password" name="password">
-            <label for="radio">Radio</label><input type="radio" id="radio" name="radio">
-
-            <label for="range">Slider</label><input type="range" id="range" name="range" min="0" max="100">
-            <output id="range-output" for="range"></output>
-            <script>
-                const range = document.getElementById("range")
-                const output = document.getElementById("range-output")
-                output.textContent = range.value
-                range.addEventListener("input", () => { output.textContent = range.value })
-            </script>
-
-            <label for="search">Search</label><input type="search" id="search" name="search">
-            <label for="tel">Telephone</label><input type="tel" id="tel" name="tel">
-            <label for="text">Text</label><input type="text" id="text" name="text">
-            <label for="time">Time</label><input type="time" id="time" name="time">
-            <label for="url">URL</label><input type="url" id="url" name="url">
-            <label for="week">Week</label><input type="week" id="week" name="week">
-
-            <h3>Other form controls</h3>
-
-            <label for="meter-range">Meter</label><input type="range" id="meter-range" name="meter-range" min="0" max="100">
-            <meter id="meter" min="0" max="100" value="75" low="33" high="66" optimum="0">75</meter>
-            <script>
-                const meterRange = document.getElementById("meter-range")
-                const meter = document.getElementById("meter")
-                meter.value = range.value
-                meterRange.addEventListener("input", () => { meter.textContent=meterRange.value; meter.value = meterRange.value })
-            </script>
-
-            <label for="progress-range">Progress</label><input type="range" id="progress-range" name="progress-range" min="0" max="100">
-            <progress id="progress" max="100" value="75">75/100</progress>
-            <script>
-                const progressRange = document.getElementById("progress-range")
-                const progress = document.getElementById("progress")
-                progress.value = range.value
-                progressRange.addEventListener("input", () => { progress.textContent=progressRange.value+'/100'; progress.value = progressRange.value })
-            </script>
-
-
-            <label for="select">Select</label>
-            <select id="select" name="select">
-                <option>Banana</option>
-                <option selected>Cherry</option>
-                <option>Lemon</option>
-            </select>
-
-            <label for="select-multi">Select-multi</label>
-            <select id="select-multi" name="select-multi" multiple>
-                <option>Banana</option>
-                <option selected>Cherry</option>
-                <option>Lemon</option>
-            </select>
-
-            <label for="textarea">Textarea</label><textarea id="textarea" name="textarea"></textarea>
-
-            <h3>Buttons</h3>
-            <input type="submit" value="Submit input">
-            <input type="reset" value="Reset input">
-            <input type="button" value="Button input">
-            <button type="button">Button button</button>
-            <button type="reset">Reset button</button>
-            <button type="submit">Submit button</button>
-        </form>
-    </section>
-
-    <section>
-        <h2>Components</h2>
-        <p>
-            Drip is light on components because it aims to be a base style sheet.
-            The components it does have are commonly used in most websites.
-        </p>
+        <p>For a full list of classes, see the <a href="styles.html#classes">classes section of the styles document</a>.</p>
     </section>
 
 </main>

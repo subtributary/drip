@@ -1,5 +1,4 @@
-@use "sass:map";
-@use "../settings" as *;
+@use "../vars" as *;
 
 $button-elements: button, "input[type=button]", "input[type=reset]", "input[type=submit]", "input[type=file]::file-selector-button";
 
@@ -14,6 +13,7 @@ $button-elements: button, "input[type=button]", "input[type=reset]", "input[type
   &>.help-text {
     color: var(#{$css-var-prefix}color-text-muted);
     margin-block-end: var(#{$css-var-prefix}spacing);
+    font-size: var(#{$css-var-prefix}small-text-size);
   }
 }
 
@@ -40,13 +40,9 @@ button, input, meter, progress, select, textarea {
 
 #{$button-elements} {
   background-color: var(#{$css-var-prefix}color-button-background);
-  color: var(#{$css-var-prefix}color-button-text);
   border-color: var(#{$css-var-prefix}color-button-background);
-
-  &:hover {
-    border-color: var(#{$css-var-prefix}color-link);
-    color: var(#{$css-var-prefix}color-link);
-  }
+  color: var(#{$css-var-prefix}color-button-text);
+  cursor: pointer;
 }
 
 input[type=checkbox], input[type=radio] {
@@ -63,9 +59,13 @@ input[type=search] {
   background-position: center left var(#{$css-var-prefix}padding);
   background-repeat: no-repeat;
   background-size: var(#{$css-var-prefix}icon-size) auto;
-
   padding-left: calc(
     var(#{$css-var-prefix}padding) * 2 +
     var(#{$css-var-prefix}icon-size));
 }
 
+textarea {
+  min-height: 3em;
+  max-width: 100%;
+  min-width: 100%;
+}
