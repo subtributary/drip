@@ -126,6 +126,26 @@ dialog > footer.row, dialog > footer > .row {
   max-height: 100%;
 }
 
+table {
+  border-collapse: collapse;
+  margin-block-end: var(--drip-spacing);
+  table-layout: fixed;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid var(--drip-color-border);
+}
+
+th, td {
+  padding: var(--drip-padding);
+}
+
+.sideways-lr table, .sideways-rl table, .vertical-lr table, .vertical-rl table {
+  height: 100%;
+  width: fit-content;
+}
+
 /*
  * Tags and classes that lay out the blocks of the webpage.
  */

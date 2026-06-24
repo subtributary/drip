@@ -1,0 +1,16 @@
+@use "../vars" as *;
+
+table {
+  border-collapse: collapse;
+  margin-block-end: var(#{$css-var-prefix}spacing);
+  table-layout: fixed;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid var(#{$css-var-prefix}color-border);
+}
+
+th, td {
+  padding: var(#{$css-var-prefix}padding);
+}
