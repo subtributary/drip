@@ -99,14 +99,11 @@ Use the form classes when multiple elements should be kept together.
 </div>
 ```
 
-## Browser support
+## Limitations
 
-Drip is designed for modern devices and browser versions.
-
-Browsers before April 2024 may not support Drip's dropdown component.
-This can be fixed with a JavaScript compatibility shim, but that is out of the scope of this project.
-
-Browsers before March 2017 may not support Drip at all.
+1. Ordered lists (`<ol>`) are styled for romance languages. You may wish to restyle them depending on the user's locale.
+2. Browsers before April 2024 may not support Drip's dropdown component. This can be fixed with JavaScript, but that is out of the scope of this project.
+3. Browsers before March 2017 may not support Drip at all.
 
 ## License
 

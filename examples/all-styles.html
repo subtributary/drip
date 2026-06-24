@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Drip CSS Documentation</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="../css/drip.css">
 </head>
 <body>
@@ -14,13 +13,6 @@
         <a href="#" aria-label="Index">
             <img alt="" src="logo.svg" style="width:2rem;height:2rem;">
         </a>
-
-        <nav aria-label="Primary">
-            <ul>
-                <li><a href="overview.html">Overview</a></li>
-                <li><a href="styles.html" aria-current="page">Styles</a></li>
-            </ul>
-        </nav>
 
         <form>
             <label class="sr-only" for="switcher">Text flow and direction</label>
@@ -38,6 +30,20 @@
                 <option value="sideways-rl,rtl">Sideways RL, BT</option>
             </select>
         </form>
+        <script>
+            const html = document.getElementsByTagName("html")[0];
+            const switcher = document.getElementById("switcher");
+
+            switcher.addEventListener("change", (event) => {
+                const values = event.target.value.split(",");
+                html.setAttribute("dir", values[1]);
+                html.setAttribute("class", values[0]);
+            });
+
+            const values = switcher.value.split(",");
+            html.setAttribute("dir", values[1]);
+            html.setAttribute("class", values[0]);
+        </script>
     </div>
 </header>
 
@@ -47,14 +53,48 @@
         This webpage is a demonstration and test of the default Drip stylesheet.
     </p>
 
-    <section>
-        <h2>Typography</h2>
+    <nav aria-labelledby="toc-heading">
+        <h2 id="toc-heading">Table of Contents</h2>
+        <ol>
+            <li>
+                <a href="#typography">Typography</a>
+                <ol>
+                    <li><a href="#typography-tags">Tags for inline elements</a></li>
+                    <li><a href="#typography-lists">Lists</a></li>
+                    <li><a href="#typography-classes">Classes</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="#forms">Forms</a>
+                <ol>
+                    <li><a href="#forms-text">Text and number input</a></li>
+                    <li><a href="#forms-time">Date and time input</a></li>
+                    <li><a href="#forms-selection">Selection input</a></li>
+                    <li><a href="#forms-other">Other inputs</a></li>
+                    <li><a href="#forms-range">Meter, progress, and range</a></li>
+                    <li><a href="#forms-buttons">Buttons</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="#components">Components</a>
+                <ol>
+                    <li><a href="#components-dialog">Dialog</a></li>
+                    <li><a href="#components-dropdown">Dropdown</a></li>
+                    <li><a href="#components-table">Table</a></li>
+                </ol>
+            </li>
+        </ol>
+    </nav>
 
+    <section>
+        <h2 id="typography">Typography</h2>
+
+        <h3 id="typography-tags">Tags for inline elements</h3>
         <p>
-            Most inline elements are not modified from the browser defaults.
+            Most tags for inline elements are not styled by Drip and keep the browser default style.
         </p>
         <p>
-            The inline elements that are modified are:
+            The inline elements that Drip does style are:
         </p>
         <ul>
             <li><code>&lt;a href=""&gt;</code> &mdash;
@@ -69,7 +109,8 @@
             </li>
         </ul>
         <p>
-            The inline elements that are not modified but may have visual differences from regular text are:
+            The inline elements that Drip does not style but may have visual differences from regular text are listed below.
+            These are included to verify that the default styles work well with Drip.
         </p>
         <ul>
             <li><code>&lt;abbr&gt;</code> &mdash; abbreviation (example: <abbr title="Cascading Style Sheets">CSS</abbr>)</li>
@@ -89,12 +130,69 @@
             <li><code>&lt;u&gt;</code> &mdash; <u>non-textual annotation</u></li>
             <li><code>&lt;var&gt;</code> &mdash; <var>variable</var></li>
         </ul>
+
+        <h3 id="typography-lists">Lists</h3>
+        <p>Drip styles lists to three layers deep.</p>
+        <p>Here is an example of an ordered list:</p>
+        <ol>
+            <li>Animals<ol>
+                <li>Pets<ol>
+                    <li>Cat</li>
+                    <li>Dog</li>
+                    <li>Fish</li>
+                </ol></li>
+                <li>Wild<ol>
+                    <li>Bear</li>
+                    <li>Lion</li>
+                    <li>Tiger</li>
+                </ol></li>
+            </ol></li>
+            <li>Colors<ol>
+                <li>Blue</li>
+                <li>Green</li>
+                <li>Red</li>
+            </ol></li>
+        </ol>
+        <p>Here is an example of an unordered list:</p>
+        <ul>
+            <li>Additive<ul>
+                <li>White<ul>
+                    <li>Blue</li>
+                    <li>Green</li>
+                    <li>Red</li>
+                </ul></li>
+                <li>Yellow<ul>
+                    <li>Green</li>
+                    <li>Red</li>
+                </ul></li>
+            </ul></li>
+            <li>Subtractive<ul>
+                <li>Black<ul>
+                    <li>Cyan</li>
+                    <li>Magenta</li>
+                    <li>Yellow</li>
+                </ul></li>
+                <li>Red<ul>
+                    <li>Magenta</li>
+                    <li>Yellow</li>
+                </ul></li>
+            </ul></li>
+        </ul>
+
+        <h3 id="typography-classes">Classes</h3>
+        <p>
+            Drip includes some classes to format (usually inline) text:
+        </p>
+        <ul>
+            <li><code>.sr-only</code> &mdash; hides an element from view but makes it readable by screen readers. <span class="sr-only">(For example, this text.)</span></li>
+            <li><code>.text-muted</code> &mdash; renders text in a <span class="text-muted">muted color</span>.</li>
+        </ul>
     </section>
 
     <section>
-        <h2>Forms</h2>
+        <h2 id="forms">Forms</h2>
         <form>
-            <h3>Text and number input</h3>
+            <h3 id="forms-text">Text and number input</h3>
             <div class="form-group">
                 <label for="text">Text</label>
                 <input type="text" id="text" name="text">
@@ -108,7 +206,7 @@
             <label for="number">Number</label><input type="number" id="number" name="number">
             <label for="tel">Telephone</label><input type="tel" id="tel" name="tel">
 
-            <h3>Date and time input</h3>
+            <h3 id="forms-time">Date and time input</h3>
             <div class="row">
                 <div class="form-group">
                     <label for="date">Date</label>
@@ -125,7 +223,7 @@
             </div>
             <label for="week">Week</label><input type="week" id="week" name="week">
 
-            <h3>Selection input</h3>
+            <h3 id="forms-selection">Selection input</h3>
             <div class="row">
                 <div>
                     <input type="checkbox" id="checkbox1" name="checkbox1" value="yes" checked>
@@ -165,11 +263,11 @@
                 <option>Lemon</option>
             </select>
 
-            <h3>Other inputs</h3>
+            <h3 id="forms-other">Other inputs</h3>
             <label for="color">Color</label><input type="color" id="color" name="color">
             <label for="file">File</label><input type="file" id="file" name="file">
 
-            <h3>Meter, progress, and range</h3>
+            <h3 id="forms-range">Meter, progress, and range</h3>
             <p>
                 Drip does not style meter, progress, and range elements.
                 Their style options are too limited with standard CSS.
@@ -199,7 +297,7 @@
                 </script>
             </div>
 
-            <h3>Buttons</h3>
+            <h3 id="forms-buttons">Buttons</h3>
             <div class="row">
                 <input type="submit" value="Submit input">
                 <input type="reset" value="Reset input">
@@ -214,13 +312,13 @@
     </section>
 
     <section>
-        <h2>Components</h2>
+        <h2 id="components">Components</h2>
         <p>
             Drip is light on components because it aims to be a base style sheet.
             The components it does have are commonly used in most websites.
         </p>
 
-        <h3>Dialog</h3>
+        <h3 id="components-dialog">Dialog</h3>
         <p>
             This dialog example uses newer HTML5 attributes that are not supported in all recent browser versions.
             In fully implemented websites, JavaScript should be used instead or as a fallback to open and close the dialog.
@@ -238,7 +336,7 @@
             </footer>
         </dialog>
 
-        <h3>Dropdown</h3>
+        <h3 id="components-dropdown">Dropdown</h3>
         <div class="dropdown">
             <button popovertarget="dropdown">
                 Toggle dropdown
@@ -248,7 +346,7 @@
             </div>
         </div>
 
-        <h3>Table</h3>
+        <h3 id="components-table">Table</h3>
         <table>
             <caption>
                 Example table with letter columns and number rows.
@@ -295,33 +393,6 @@
             </tfoot>
         </table>
     </section>
-
-    <section>
-        <h2><a id="classes">Classes</a></h2>
-
-        <h3>Writing flow classes</h3>
-        <ul>
-            <li><code>.horizontal-tb</code></li>
-            <li><code>.sideways-lr</code></li>
-            <li><code>.sideways-rl</code></li>
-            <li><code>.vertical-lr</code></li>
-            <li><code>.vertical-rl</code></li>
-        </ul>
-
-        <h3>Layout classes</h3>
-        <ul>
-            <li><code>.container</code> &mdash; limits the width on horizontal flows or the height on vertical flows.</li>
-            <li><code>.container-full</code> &mdash; does not limit the size but adds padding.</li>
-            <li><code>.row</code> &mdash; arranges elements on the same line.</li>
-        </ul>
-
-        <h3>Formatting classes</h3>
-        <ul>
-            <li><code>.sr-only</code> &mdash; hides an element from view but makes it readable by screen readers. <span class="sr-only">(For example, this text.)</span></li>
-            <li><code>.text-muted</code> &mdash; renders text in a <span class="text-muted">muted color</span>.</li>
-        </ul>
-    </section>
-
 </main>
 
 </body>

@@ -17,6 +17,10 @@
     height: 100%;
   }
 
+  input[type=checkbox], input[type=radio] {
+    height: revert;
+  }
+
   textarea {
     min-height: 100%;
     max-height: 100%;
@@ -30,7 +34,10 @@ html[dir=rtl] {
     background-position: center right var(#{$css-var-prefix}padding);
   }
 
-  .sideways-lr, .sideways-rl, .vertical-lr, .vertical-rl {
-    background-position: center bottom var(#{$css-var-prefix}padding);
+  .sideways-lr, .sideways-rl, .vertical-lr, .vertical-rl,
+  &.sideways-lr, &.sideways-rl, &.vertical-lr, &.vertical-rl {
+    input[type=search] {
+      background-position: center bottom var(#{$css-var-prefix}padding);
+    }
   }
 }

@@ -37,26 +37,26 @@ button, input, meter, progress, select, textarea {
   width: 100%;
 }
 
-#{$button-elements}, input:not([type=file]), select, textarea {
+input:not([type=file]), select, textarea {
   background-color: var(#{$css-var-prefix}color-input);
-  border-color: var(#{$css-var-prefix}color-border);
+  border: 2px solid var(#{$css-var-prefix}color-border);
   border-radius: var(#{$css-var-prefix}padding);
-  border-style: solid;
-  border-width: 2px;
   color: var(#{$css-var-prefix}color-text);
   padding: var(#{$css-var-prefix}padding);
 }
 
 #{$button-elements} {
-  background-color: var(#{$css-var-prefix}color-button-background);
-  border-color: var(#{$css-var-prefix}color-button-background);
-  color: var(#{$css-var-prefix}color-button-text);
+  background: none;
+  border: 2px solid var(#{$css-var-prefix}color-link);
+  border-radius: var(#{$css-var-prefix}padding);
+  color: var(#{$css-var-prefix}color-link);
+  padding: var(#{$css-var-prefix}padding);
   cursor: pointer;
 }
 
 input[type=checkbox], input[type=radio] {
   display: inline;
-  width: auto;
+  width: revert;
 
   & + label {
     display: inline;

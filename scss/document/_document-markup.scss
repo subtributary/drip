@@ -4,7 +4,7 @@
 
 @use "../vars" as *;
 
-a[href] {
+a {
   color: var(#{$css-var-prefix}color-link);
 
   &:visited {
@@ -29,18 +29,37 @@ dl, h1, h2, h3, h4, h5, h6, ol, p, pre, ul {
 }
 
 h2 {
-  border-color: var(#{$css-var-prefix}color-border);
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
+  border-block-end: 1px solid var(#{$css-var-prefix}color-border);
+}
+
+ol {
+  // The `+ 1em` should handle the width of the bullet.
+  padding-inline-start: calc(var(#{$css-var-prefix}spacing) + 1em);
+  list-style-type: decimal;
+
+  &>li>ol {
+    list-style-type: lower-latin;
+    &>li>ol {
+      list-style-type: lower-roman;
+    }
+  }
 }
 
 sub, sup {
   font-size: var(#{$css-var-prefix}small-text-size);
 }
 
-ol, ul {
+ul {
   // The `+ 1em` should handle the width of the bullet.
   padding-inline-start: calc(var(#{$css-var-prefix}spacing) + 1em);
+  list-style-type: disc;
+
+  &>li>ul {
+    list-style-type: circle;
+    &>li>ul {
+      list-style-type: square;
+    }
+  }
 }
 
 // .sr-only makes an element only visible to screen readers.
