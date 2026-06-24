@@ -8,6 +8,7 @@ It supports all common writing directions with reasonable default styles.
 These options are available for getting Drip:
 
 * Clone the repo: `git clone https://github.com/subtributary/drip.git`
+* Install with npm: `npm install @subtributary/drip`
 
 After getting the CSS file, include it in your website before any custom styles:
 
