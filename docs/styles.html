@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Drip CSS Documentation</title>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="../css/drip.css">
 </head>
 <body>
@@ -22,11 +23,19 @@
         </nav>
 
         <form>
-            <label class="sr-only" for="locale1">Direction</label>
-            <select id="locale1">
-                <option>Anatolian Hieroglyphs</option>
-                <option selected>English</option>
-                <option>Korean</option>
+            <label class="sr-only" for="switcher">Text flow and direction</label>
+            <select id="switcher">
+                <option value=",auto" selected>default</option>
+                <option value="horizontal-tb,ltr">Horizontal, LR</option>
+                <option value="horizontal-tb,rtl">Horizontal, RL</option>
+                <option value="vertical-lr,ltr">Vertical LR, TB</option>
+                <option value="vertical-lr,rtl">Vertical LR, BT</option>
+                <option value="vertical-rl,ltr">Vertical RL, TB</option>
+                <option value="vertical-rl,rtl">Vertical RL, BT</option>
+                <option value="sideways-lr,ltr">Sideways LR, TB</option>
+                <option value="sideways-lr,rtl">Sideways LR, BT</option>
+                <option value="sideways-rl,ltr">Sideways RL, TB</option>
+                <option value="sideways-rl,rtl">Sideways RL, BT</option>
             </select>
         </form>
     </div>
@@ -138,6 +147,10 @@
                 </div>
             </div>
 
+            <p>
+                Drip does not style select dropdowns.
+                Its style options are too limited with standard CSS.
+            </p>
             <label for="select">Select</label>
             <select id="select" name="select">
                 <option>Banana</option>
@@ -158,20 +171,20 @@
 
             <h3>Meter, progress, and range</h3>
             <p>
-                Drip does not color meter, progress, and range elements because their style options for coloring are too limited with standard CSS.
-                We want to stick to standard CSS and avoid browser-specific hacks to style elements.
+                Drip does not style meter, progress, and range elements.
+                Their style options are too limited with standard CSS.
             </p>
             <div class="row">
                 <div class="form-group">
                     <label for="meter-range">Slider &amp; meter</label>
                     <input type="range" id="meter-range" name="meter-range" min="0" max="100">
-                    <meter id="meter" min="0" max="100" value="75" low="33" high="66" optimum="0">75</meter>
+                    <meter id="meter" min="0" max="100" value="75" low="33" high="66" optimum="80">75</meter>
                 </div>
                 <script>
                     const meterRange = document.getElementById("meter-range")
                     const meter = document.getElementById("meter")
                     meter.value = meterRange.value
-                    meterRange.addEventListener("input", () => { meter.textContent=meterRange.value; meter.value = meterRange.value })
+                    meterRange.addEventListener("input", (event) => { meter.textContent=event.target.value; meter.value = event.target.value })
                 </script>
                 <div class="form-group">
                     <label for="progress-range">Slider &amp; progress</label>
@@ -182,7 +195,7 @@
                     const progressRange = document.getElementById("progress-range")
                     const progress = document.getElementById("progress")
                     progress.value = progressRange.value
-                    progressRange.addEventListener("input", () => { progress.textContent=progressRange.value+'/100'; progress.value = progressRange.value })
+                    progressRange.addEventListener("input", (event) => { progress.textContent=event.target.value+'/100'; progress.value = event.target.value })
                 </script>
             </div>
 
@@ -233,13 +246,29 @@
     <section>
         <h2><a id="classes">Classes</a></h2>
 
+        <h3>Writing flow classes</h3>
+        <ul>
+            <li><code>.horizontal-tb</code></li>
+            <li><code>.sideways-lr</code></li>
+            <li><code>.sideways-rl</code></li>
+            <li><code>.vertical-lr</code></li>
+            <li><code>.vertical-rl</code></li>
+        </ul>
+
+        <h3>Layout classes</h3>
         <ul>
             <li><code>.container</code> &mdash; limits the width on horizontal flows or the height on vertical flows.</li>
             <li><code>.container-full</code> &mdash; does not limit the size but adds padding.</li>
             <li><code>.row</code> &mdash; arranges elements on the same line.</li>
+        </ul>
+
+        <h3>Formatting classes</h3>
+        <ul>
             <li><code>.sr-only</code> &mdash; hides an element from view but makes it readable by screen readers. <span class="sr-only">(For example, this text.)</span></li>
             <li><code>.text-muted</code> &mdash; renders text in a <span class="text-muted">muted color</span>.</li>
         </ul>
+
+        <h3>Component classes</h3>
     </section>
 
 </main>

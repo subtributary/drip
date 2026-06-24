@@ -1,0 +1,10 @@
+@use "../vars" as *;
+
+.sideways-lr, .sideways-rl, .vertical-lr, .vertical-rl {
+  dialog {
+    width: fit-content;
+    max-width: unset;
+    height: var(#{$css-var-prefix}dialog-size);
+    max-height: 100%;
+  }
+}

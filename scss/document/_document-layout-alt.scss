@@ -1,0 +1,28 @@
+@use "../vars" as *;
+
+.horizontal-tb {
+  writing-mode: horizontal-tb;
+}
+
+.sideways-lr {
+  writing-mode: sideways-lr;
+}
+
+.sideways-rl {
+  writing-mode: sideways-rl;
+}
+
+.vertical-lr {
+  writing-mode: vertical-lr;
+}
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+}
+
+.sideways-lr, .sideways-rl, .vertical-lr, .vertical-rl {
+  .container {
+    max-width: unset;
+    max-height: var(#{$css-var-prefix}container-size);
+  }
+}

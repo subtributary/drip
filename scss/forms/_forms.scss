@@ -59,10 +59,11 @@ input[type=search] {
   background-position: center left var(#{$css-var-prefix}padding);
   background-repeat: no-repeat;
   background-size: var(#{$css-var-prefix}icon-size) auto;
-  padding-left: calc(
+  padding-inline-start: calc(
     var(#{$css-var-prefix}padding) * 2 +
     var(#{$css-var-prefix}icon-size));
 }
+
 
 textarea {
   min-height: 3em;

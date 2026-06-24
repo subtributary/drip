@@ -16,7 +16,7 @@ body {
 
 .container {
   margin-inline: auto;
-  max-width: var(#{$css-var-prefix}container-width);
+  max-width: var(#{$css-var-prefix}container-size);
 }
 
 .row {

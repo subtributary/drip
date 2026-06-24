@@ -4,7 +4,7 @@
 
 @use "../vars" as *;
 
-a {
+a[href] {
   color: var(#{$css-var-prefix}color-link);
 
   &:visited {

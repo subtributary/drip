@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Drip CSS Documentation</title>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="../css/drip.css">
 </head>
 <body>
@@ -22,11 +23,19 @@
         </nav>
 
         <form>
-            <label class="sr-only" for="locale1">Direction</label>
-            <select id="locale1">
-                <option>Anatolian Hieroglyphs</option>
-                <option selected>English</option>
-                <option>Korean</option>
+            <label class="sr-only" for="locale">Text flow and direction</label>
+            <select id="locale">
+                <option value=",auto" selected>default</option>
+                <option value="horizontal-tb,ltr">Horizontal, LR</option>
+                <option value="horizontal-tb,rtl">Horizontal, RL</option>
+                <option value="vertical-lr,ltr">Vertical LR, TB</option>
+                <option value="vertical-lr,rtl">Vertical LR, BT</option>
+                <option value="vertical-rl,ltr">Vertical RL, TB</option>
+                <option value="vertical-rl,rtl">Vertical RL, BT</option>
+                <option value="sideways-lr,ltr">Sideways LR, TB</option>
+                <option value="sideways-lr,rtl">Sideways LR, BT</option>
+                <option value="sideways-rl,ltr">Sideways RL, TB</option>
+                <option value="sideways-rl,rtl">Sideways RL, BT</option>
             </select>
         </form>
     </div>
