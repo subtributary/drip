@@ -1,6 +1,13 @@
 @use "../vars" as *;
 
 .sideways-lr, .sideways-rl, .vertical-lr, .vertical-rl {
+  .dropdown {
+    &>[popover] {
+      height: 100%;
+      width: fit-content;
+    }
+  }
+
   input[type=search] {
     background-position: center top var(#{$css-var-prefix}padding);
   }

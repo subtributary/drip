@@ -1,17 +1,13 @@
+@use "../mixins" as *;
 @use "../vars" as *;
 
 dialog {
-  background-color: var(#{$css-var-prefix}color-background);
-  border-color: var(#{$css-var-prefix}color-text);
-  border-radius: var(#{$css-var-prefix}padding);
-  border-style: solid;
-  border-width: 2px;
-  padding: var(#{$css-var-prefix}spacing);
+  @include modal;
   width: var(#{$css-var-prefix}dialog-size);
   max-width: 100%;
 
   &::backdrop {
-    background-color: rgb(from #767676 r g b / 0.67);
+    background-color: rgb(0, 0, 0, 0.67);
   }
 
   &>header {

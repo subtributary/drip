@@ -90,16 +90,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 dialog {
   background-color: var(--drip-color-background);
-  border-color: var(--drip-color-text);
+  border-color: var(--drip-color-border);
   border-radius: var(--drip-padding);
   border-style: solid;
-  border-width: 2px;
+  border-width: 1px;
+  color: var(--drip-color-text);
   padding: var(--drip-spacing);
+  box-shadow: 1px 1px 2px #000;
   width: var(--drip-dialog-size);
   max-width: 100%;
 }
 dialog::backdrop {
-  background-color: rgb(from #767676 r g b/0.67);
+  background-color: rgba(0, 0, 0, 0.67);
 }
 dialog > header {
   display: flex;
@@ -159,26 +161,26 @@ footer > .container, footer > .container-full {
   justify-content: space-between;
   align-items: center;
 }
-header > .container nav > ul, header > .container-full nav > ul,
-footer > .container nav > ul, footer > .container-full nav > ul {
-  padding: 0;
-  display: flex;
-}
-header > .container nav > ul > li, header > .container-full nav > ul > li,
-footer > .container nav > ul > li, footer > .container-full nav > ul > li {
-  display: block;
-}
-header > .container nav > ul > li > a, header > .container-full nav > ul > li > a,
-footer > .container nav > ul > li > a, footer > .container-full nav > ul > li > a {
+header > .container a, header > .container-full a,
+footer > .container a, footer > .container-full a {
   display: block;
   padding: var(--drip-spacing);
   color: inherit;
   text-decoration: none;
 }
-header > .container nav > ul > li > a[aria-current=page], header > .container nav > ul > li > a:hover, header > .container-full nav > ul > li > a[aria-current=page], header > .container-full nav > ul > li > a:hover,
-footer > .container nav > ul > li > a[aria-current=page],
-footer > .container nav > ul > li > a:hover, footer > .container-full nav > ul > li > a[aria-current=page], footer > .container-full nav > ul > li > a:hover {
+header > .container a[aria-current=page], header > .container a:hover, header > .container-full a[aria-current=page], header > .container-full a:hover,
+footer > .container a[aria-current=page],
+footer > .container a:hover, footer > .container-full a[aria-current=page], footer > .container-full a:hover {
   color: var(--drip-color-link);
+}
+header > .container ul, header > .container-full ul,
+footer > .container ul, footer > .container-full ul {
+  display: flex;
+  padding: 0;
+}
+header > .container ul > li, header > .container-full ul > li,
+footer > .container ul > li, footer > .container-full ul > li {
+  display: block;
 }
 
 .horizontal-tb {
@@ -261,6 +263,19 @@ ol, ul {
   color: var(--drip-color-text-muted);
 }
 
+.dropdown > [popover] {
+  background-color: var(--drip-color-background);
+  border-color: var(--drip-color-border);
+  border-radius: var(--drip-padding);
+  border-style: solid;
+  border-width: 1px;
+  color: var(--drip-color-text);
+  padding: var(--drip-spacing);
+  box-shadow: 1px 1px 2px #000;
+  position-area: end center;
+  width: 100%;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -324,6 +339,10 @@ textarea {
   min-width: 100%;
 }
 
+.sideways-lr .dropdown > [popover], .sideways-rl .dropdown > [popover], .vertical-lr .dropdown > [popover], .vertical-rl .dropdown > [popover] {
+  height: 100%;
+  width: fit-content;
+}
 .sideways-lr input[type=search], .sideways-rl input[type=search], .vertical-lr input[type=search], .vertical-rl input[type=search] {
   background-position: center top var(--drip-padding);
 }

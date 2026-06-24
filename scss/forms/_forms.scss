@@ -1,6 +1,15 @@
+@use "../mixins" as *;
 @use "../vars" as *;
 
 $button-elements: button, "input[type=button]", "input[type=reset]", "input[type=submit]", "input[type=file]::file-selector-button";
+
+.dropdown {
+  &>[popover] {
+    @include modal;
+    position-area: end center;
+    width: 100%;
+  }
+}
 
 .form-group {
   display: flex;
@@ -70,3 +79,4 @@ textarea {
   max-width: 100%;
   min-width: 100%;
 }
+
