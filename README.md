@@ -99,6 +99,15 @@ Use the form classes when multiple elements should be kept together.
 </div>
 ```
 
+## Browser support
+
+Drip is designed for modern devices and browser versions.
+
+Browsers before April 2024 may not support Drip's dropdown component.
+This can be fixed with a JavaScript compatibility shim, but that is out of the scope of this project.
+
+Browsers before March 2017 may not support Drip at all.
+
 ## License
 
 Drip is free and unencumbered software released into the public domain.
