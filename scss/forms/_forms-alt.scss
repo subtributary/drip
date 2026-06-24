@@ -1,23 +1,32 @@
 @use "../vars" as *;
 
-.sideways-lr, .sideways-rl, .vertical-lr, .vertical-rl {
+.sideways-lr,
+.sideways-rl,
+.vertical-lr,
+.vertical-rl {
   .dropdown {
-    &>[popover] {
+    & > [popover] {
       height: 100%;
       width: fit-content;
     }
   }
 
-  input[type=search] {
+  input[type="search"] {
     background-position: center top var(#{$css-var-prefix}padding);
   }
 
-  button, input, meter, progress, select, textarea {
+  button,
+  input,
+  meter,
+  progress,
+  select,
+  textarea {
     width: revert;
     height: 100%;
   }
 
-  input[type=checkbox], input[type=radio] {
+  input[type="checkbox"],
+  input[type="radio"] {
     height: revert;
   }
 
@@ -29,14 +38,20 @@
   }
 }
 
-html[dir=rtl] {
-  input[type=search] {
+html[dir="rtl"] {
+  input[type="search"] {
     background-position: center right var(#{$css-var-prefix}padding);
   }
 
-  .sideways-lr, .sideways-rl, .vertical-lr, .vertical-rl,
-  &.sideways-lr, &.sideways-rl, &.vertical-lr, &.vertical-rl {
-    input[type=search] {
+  .sideways-lr,
+  .sideways-rl,
+  .vertical-lr,
+  .vertical-rl,
+  &.sideways-lr,
+  &.sideways-rl,
+  &.vertical-lr,
+  &.vertical-rl {
+    input[type="search"] {
       background-position: center bottom var(#{$css-var-prefix}padding);
     }
   }

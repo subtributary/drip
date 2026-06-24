@@ -1,19 +1,25 @@
 {
   "name": "drip",
+
+  "author": "Subtributary",
+  "description": "A base stylesheet for globalized websites.",
+  "license": "The Unlicense",
+  "repository": "github:subtributary/drip",
   "version": "0.1.0",
-  "private": true,
-  "description": "CSS library",
+
+  "main": "dist/drip.css",
+  "sass": "scss/drip.scss",
+  "style": "dist/drip.css",
+
   "scripts": {
-    "build:css": "sass scss:css --no-source-map --style compressed",
-    "build:watch": "sass scss:css --watch --no-source-map",
+    "build:watch": "sass scss/drip.scss dist/drip.css --watch",
+    "build:css": "sass scss/drip.scss dist/drip.css --style=compressed --no-source-map",
     "build": "npm run build:css",
     "format:scss": "npx prettier --check scss/**/*.scss --write",
     "format": "npm run format:scss"
   },
-  "dependencies": {
-    "sass": "^1.101.0"
-  },
   "devDependencies": {
-    "prettier": "^3.8.4"
+    "prettier": "^3.8.4",
+    "sass": "^1.101.0"
   }
 }

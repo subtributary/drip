@@ -1,4 +1,4 @@
-# Drip v0
+# Drip v0.1
 
 Drip is a minimal CSS library designed to be a base stylesheet for globalized projects.
 It supports all common writing directions with reasonable default styles.

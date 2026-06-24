@@ -7,10 +7,13 @@ table {
   width: 100%;
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid var(#{$css-var-prefix}color-border);
 }
 
-th, td {
+th,
+td {
   padding: var(#{$css-var-prefix}padding);
 }
