@@ -9,7 +9,7 @@ These options are available for getting Drip:
 
 * Clone the repo: `git clone https://github.com/subtributary/drip.git`
 
-Include Drip in your website simply by including the CSS file:
+After getting the CSS file, include it in your website before any custom styles:
 
 ```html
 <!doctype html>
@@ -61,13 +61,13 @@ These are the rest of the classes:
 * `sr-only` — hides an element from view but makes it readable by screen readers.
 * `text-muted` — renders text in a muted color.
 
-## Dropdown
+### Dropdown
 
 Use the `dropdown` class to create a customizable dropdown component.
 
 ```html
 <div class="dropdown">
-  <button popovertarget="dropdown" aria-expanded="false" aria-controls="dropdown">
+  <button popovertarget="dropdown">
     Toggle dropdown
   </button>
   <div id="dropdown" popover>
