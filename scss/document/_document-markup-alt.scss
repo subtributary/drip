@@ -1,0 +1,8 @@
+@use "../vars" as *;
+
+#{$vertical-layouts} {
+  dl, ol, ul, p {
+    max-height: var(#{$css-var-prefix}paragraph-size);
+    max-width: fit-content;
+  }
+}

@@ -1,6 +1,6 @@
 @use "../vars" as *;
 
-.sideways-lr, .sideways-rl, .vertical-lr, .vertical-rl {
+#{$vertical-layouts} {
   table {
     height: 100%;
     width: fit-content;

@@ -1,8 +1,6 @@
 @use "../mixins" as *;
 @use "../vars" as *;
 
-$button-elements: button, "input[type=button]", "input[type=reset]", "input[type=submit]", "input[type=file]::file-selector-button";
-
 .dropdown {
   &>[popover] {
     @include modal;
@@ -46,12 +44,24 @@ input:not([type=file]), select, textarea {
 }
 
 #{$button-elements} {
-  background: none;
+  background: var(#{$css-var-prefix}color-background);
   border: 2px solid var(#{$css-var-prefix}color-link);
   border-radius: var(#{$css-var-prefix}padding);
   color: var(#{$css-var-prefix}color-link);
-  padding: var(#{$css-var-prefix}padding);
   cursor: pointer;
+  padding: var(#{$css-var-prefix}padding);
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition:
+      background-color var(#{$css-var-prefix}animation-speed) ease,
+      border-color var(#{$css-var-prefix}animation-speed) ease,
+      color var(#{$css-var-prefix}animation-speed) ease;
+    &:hover {
+      color: var(#{$css-var-prefix}color-background);
+      background: var(#{$css-var-prefix}color-link);
+      border-color: var(#{$css-var-prefix}color-link);
+    }
+  }
 }
 
 input[type=checkbox], input[type=radio] {

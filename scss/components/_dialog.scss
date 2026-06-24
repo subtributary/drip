@@ -3,7 +3,7 @@
 
 dialog {
   @include modal;
-  width: var(#{$css-var-prefix}dialog-size);
+  width: var(#{$css-var-prefix}paragraph-size);
   max-width: 100%;
 
   &::backdrop {

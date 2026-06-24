@@ -20,7 +20,7 @@
   writing-mode: vertical-rl;
 }
 
-.sideways-lr, .sideways-rl, .vertical-lr, .vertical-rl {
+#{$vertical-layouts} {
   .container {
     max-width: unset;
     max-height: var(#{$css-var-prefix}container-size);

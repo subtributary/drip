@@ -6,6 +6,16 @@
 
 a {
   color: var(#{$css-var-prefix}color-link);
+  white-space: nowrap;
+  overflow-wrap: break-word;
+  text-decoration: none;
+
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover {
+      text-decoration: underline;
+      text-underline-position: under;
+    }
+  }
 
   &:visited {
     color: var(#{$css-var-prefix}color-link-visited);
@@ -18,8 +28,8 @@ a {
     mask-image: var(#{$css-var-prefix}icon-external);
     mask-size: contain;
     // This is more of a subscript than a full-sized icon.
-    width: var(#{$css-var-prefix}small-text-size);
-    height: var(#{$css-var-prefix}small-text-size);
+    width: var(#{$css-var-prefix}text-size-small);
+    height: var(#{$css-var-prefix}text-size-small);
     margin-inline: 0.1em;
   }
 }
@@ -28,15 +38,25 @@ dl, h1, h2, h3, h4, h5, h6, ol, p, pre, ul {
   margin-block-end: var(#{$css-var-prefix}spacing);
 }
 
+h1, h2, h3, h4, h5, h6, sub, sup {
+  line-height: var(#{$css-var-prefix}text-line-height);
+}
+
+dl, ol, ul, p {
+  max-width: var(#{$css-var-prefix}paragraph-size);
+}
+
 h2 {
   border-block-end: 1px solid var(#{$css-var-prefix}color-border);
 }
 
-ol {
+ol, ul {
   // The `+ 1em` should handle the width of the bullet.
   padding-inline-start: calc(var(#{$css-var-prefix}spacing) + 1em);
-  list-style-type: decimal;
+}
 
+ol {
+  list-style-type: decimal;
   &>li>ol {
     list-style-type: lower-latin;
     &>li>ol {
@@ -46,14 +66,11 @@ ol {
 }
 
 sub, sup {
-  font-size: var(#{$css-var-prefix}small-text-size);
+  font-size: var(#{$css-var-prefix}text-size-small);
 }
 
 ul {
-  // The `+ 1em` should handle the width of the bullet.
-  padding-inline-start: calc(var(#{$css-var-prefix}spacing) + 1em);
   list-style-type: disc;
-
   &>li>ul {
     list-style-type: circle;
     &>li>ul {
@@ -62,8 +79,8 @@ ul {
   }
 }
 
-// .sr-only makes an element only visible to screen readers.
-.sr-only {
+// .visually-hidden makes an element only visible to screen readers.
+.visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -74,6 +91,18 @@ ul {
   position: absolute;
   white-space: nowrap;
   width: 1px;
+
+  &:focus {
+    clip: auto;
+    clip-path: none;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    padding: var(#{$css-var-prefix}padding);
+    position: static;
+    white-space: normal;
+    width: auto;
+  }
 }
 
 .text-muted {

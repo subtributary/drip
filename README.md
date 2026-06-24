@@ -58,7 +58,7 @@ These are the rest of the classes:
 * `dropdown` — creates a dropdown component similar to a `select`.
 * `form-group` — wraps a form label, input, and help text together.
   * `help-text` — when used inside a `form-group`, renders help text in small, muted text.
-* `sr-only` — hides an element from view but makes it readable by screen readers.
+* `visually-hidden` — hides an element from view but makes it readable by screen readers.
 * `text-muted` — renders text in a muted color.
 
 ### Dropdown
@@ -101,9 +101,9 @@ Use the form classes when multiple elements should be kept together.
 
 ## Limitations
 
-1. Ordered lists (`<ol>`) are styled for romance languages. You may wish to restyle them depending on the user's locale.
-2. Browsers before April 2024 may not support Drip's dropdown component. This can be fixed with JavaScript, but that is out of the scope of this project.
-3. Browsers before March 2017 may not support Drip at all.
+1. Ordered lists (`<ol>`) are styled for romance languages. You may wish to restyle them per the locale.
+2. Drip targets major devices and browser versions from the past five years.
+3. Drip's dropdown component, an exception, may not work on browsers before April 2024.
 
 ## License
 
