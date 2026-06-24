@@ -7,6 +7,7 @@
   "repository": "github:subtributary/drip",
   "version": "0.1.0",
 
+  "files": ["dist/", "scss/"],
   "main": "dist/drip.css",
   "sass": "scss/drip.scss",
   "style": "dist/drip.css",
