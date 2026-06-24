@@ -4,7 +4,7 @@
   "private": true,
   "description": "CSS library",
   "scripts": {
-    "build:css": "sass scss:css --no-source-map",
+    "build:css": "sass scss:css --no-source-map --style compressed",
     "build:watch": "sass scss:css --watch --no-source-map",
     "build": "npm run build:css",
     "format:scss": "npx prettier --check scss/**/*.scss --write",
