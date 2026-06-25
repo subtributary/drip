@@ -1,0 +1,61 @@
+@use "../vars" as *;
+
+dl,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ol,
+p,
+pre,
+ul {
+  margin-block-end: var(#{$css-var-prefix}spacing);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(#{$css-var-prefix}text-line-height);
+}
+
+dl,
+ol,
+ul,
+p {
+  max-width: var(#{$css-var-prefix}paragraph-size);
+}
+
+h2 {
+  border-block-end: 1px solid var(#{$css-var-prefix}color-border);
+}
+
+ol,
+ul {
+  // The `+ 1em` should handle the width of the bullet.
+  padding-inline-start: calc(var(#{$css-var-prefix}spacing) + 1em);
+}
+
+ol {
+  list-style-type: decimal;
+  & > li > ol {
+    list-style-type: lower-latin;
+    & > li > ol {
+      list-style-type: lower-roman;
+    }
+  }
+}
+
+ul {
+  list-style-type: disc;
+  & > li > ul {
+    list-style-type: circle;
+    & > li > ul {
+      list-style-type: square;
+    }
+  }
+}

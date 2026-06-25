@@ -5,8 +5,10 @@
 @use "components/dialog-alt";
 @use "components/table";
 @use "components/table-alt";
+@use "document/document-blocks";
+@use "document/document-blocks-alt";
+@use "document/document-inline";
 @use "document/document-layout";
 @use "document/document-layout-alt";
-@use "document/document-markup";
 @use "forms/forms";
 @use "forms/forms-alt";
