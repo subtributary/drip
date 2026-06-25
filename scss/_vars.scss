@@ -15,11 +15,11 @@ $vertical-layouts: ".sideways-lr", ".sideways-rl", ".vertical-lr", ".vertical-rl
   #{$css-var-prefix}color-text-muted: #525565;
 
   #{$css-var-prefix}animation-speed: 0.2s;
-  #{$css-var-prefix}container-size: 100ch;
-  #{$css-var-prefix}paragraph-size: 75ch;
-  #{$css-var-prefix}spacing: 0.67rem; // spacing around elements
+  #{$css-var-prefix}container-size: 90ch;
+  #{$css-var-prefix}paragraph-size: 70ch;
+  #{$css-var-prefix}spacing: 1rem; // spacing around elements
   #{$css-var-prefix}padding: 0.25rem; // padding inside elements' borders
-  #{$css-var-prefix}text-size: 18px;
+  #{$css-var-prefix}text-size: 1.25rem;
   #{$css-var-prefix}text-size-small: 0.8em; // subscript, superscript
   #{$css-var-prefix}text-line-height: 1.5em;
 

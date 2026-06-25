@@ -1,15 +1,19 @@
 @use "../vars" as *;
 
+article,
 dl,
+footer,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
+header,
 ol,
 p,
 pre,
+section,
 ul {
   margin-block-end: var(#{$css-var-prefix}spacing);
 }
@@ -23,19 +27,19 @@ h6 {
   line-height: var(#{$css-var-prefix}text-line-height);
 }
 
-dl,
 ol,
 ul,
 p {
   max-width: var(#{$css-var-prefix}paragraph-size);
 }
 
-h2 {
-  border-block-end: 1px solid var(#{$css-var-prefix}color-border);
-}
-
 ol,
 ul {
+  ol,
+  ul {
+    margin-block-end: 0;
+  }
+
   // The `+ 1em` should handle the width of the bullet.
   padding-inline-start: calc(var(#{$css-var-prefix}spacing) + 1em);
 }
@@ -46,6 +50,7 @@ ol {
     list-style-type: lower-latin;
     & > li > ol {
       list-style-type: lower-roman;
+      margin-block-end: 0;
     }
   }
 }
