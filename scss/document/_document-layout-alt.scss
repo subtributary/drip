@@ -19,10 +19,3 @@
 .vertical-rl {
   writing-mode: vertical-rl;
 }
-
-#{$vertical-layouts} {
-  .container {
-    max-width: unset;
-    max-height: var(#{$css-var-prefix}container-size);
-  }
-}

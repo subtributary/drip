@@ -3,8 +3,8 @@
 
 dialog {
   @include modal;
-  width: var(#{$css-var-prefix}paragraph-size);
-  max-width: 100%;
+  inline-size: var(#{$css-var-prefix}paragraph-size);
+  max-inline-size: 100%;
 
   &::backdrop {
     background-color: rgb(0, 0, 0, 0.67);
@@ -17,16 +17,7 @@ dialog {
     gap: 0 var(#{$css-var-prefix}spacing);
 
     & > button[command="close"] {
-      background-color: var(#{$css-var-prefix}color-link);
-      mask-image: var(#{$css-var-prefix}icon-close);
-      mask-size: contain;
-      width: 1em;
-      height: 1em;
-      margin-inline-start: -1em;
-
-      &:hover {
-        background-color: var(#{$css-var-prefix}color-link);
-      }
+      @include icon(var(#{$css-var-prefix}icon-close), var(#{$css-var-prefix}color-link));
     }
   }
 

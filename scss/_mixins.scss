@@ -1,5 +1,15 @@
 @use "vars" as *;
 
+@mixin icon($icon, $fg) {
+  height: var(#{$css-var-prefix}icon-size);
+  width: var(#{$css-var-prefix}icon-size);
+
+  background-color: $fg;
+  mask-image: $icon, linear-gradient(#fff, #fff);
+  mask-composite: intersect;
+  mask-size: contain;
+}
+
 @mixin modal {
   background-color: var(#{$css-var-prefix}color-background);
   border-color: var(#{$css-var-prefix}color-border);

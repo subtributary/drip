@@ -30,6 +30,10 @@ a {
   }
 }
 
+small {
+  font-size: var(#{$css-var-prefix}text-size-small);
+}
+
 sub,
 sup {
   font-size: var(#{$css-var-prefix}text-size-small);

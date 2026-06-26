@@ -4,7 +4,7 @@ table {
   border-collapse: collapse;
   margin-block-end: var(#{$css-var-prefix}spacing);
   table-layout: fixed;
-  width: 100%;
+  inline-size: 100%;
 }
 
 table,

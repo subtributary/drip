@@ -1,43 +1,23 @@
-@use "../mixins" as *;
 @use "../vars" as *;
-
-.dropdown {
-  & > [popover] {
-    @include modal;
-    position-area: end center;
-    width: 100%;
-  }
-}
 
 .form-group {
   display: flex;
   flex-direction: column;
-
-  & > *:not(:last-child) {
-    margin-block-end: var(#{$css-var-prefix}padding);
-  }
-
-  & > .help-text {
-    color: var(#{$css-var-prefix}color-text-muted);
-    margin-block-end: var(#{$css-var-prefix}spacing);
-    font-size: var(#{$css-var-prefix}text-size-small);
-  }
+  margin-block-end: var(#{$css-var-prefix}spacing);
 }
 
-label {
+input:not([type="checkbox"],[type="radio"]) label {
   display: block;
-  margin-block-end: var(#{$css-var-prefix}padding);
 }
 
 button,
-input,
+input:not([type="checkbox"],[type="radio"]),
 meter,
 progress,
 select,
 textarea {
   display: block;
-  margin-block-end: var(#{$css-var-prefix}spacing);
-  width: 100%;
+  inline-size: 100%;
 }
 
 input:not([type="file"]),
@@ -71,16 +51,6 @@ textarea {
   }
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-  display: inline;
-  width: revert;
-
-  & + label {
-    display: inline;
-  }
-}
-
 input[type="search"] {
   background-image: var(#{$css-var-prefix}icon-search);
   background-position: center left var(#{$css-var-prefix}padding);
@@ -92,7 +62,7 @@ input[type="search"] {
 }
 
 textarea {
-  min-height: 3em;
-  max-width: 100%;
-  min-width: 100%;
+  min-block-size: 3em;
+  max-inline-size: 100%;
+  min-inline-size: 100%;
 }

@@ -58,7 +58,6 @@ These are the rest of the classes:
 
 * `dropdown` — creates a dropdown component similar to a `select`.
 * `form-group` — wraps a form label, input, and help text together.
-  * `help-text` — when used inside a `form-group`, renders help text in small, muted text.
 * `visually-hidden` — hides an element from view but makes it readable by screen readers.
 * `text-muted` — renders text in a muted color.
 
@@ -77,14 +76,28 @@ Use the `dropdown` class to create a customizable dropdown component.
 </div>
 ```
 
+Drip styles the dropdown button and positions the dropdown next to it.
+Further styling depending on the context is usually needed.
+For example, the following customization is for a dropdown at the end of a navbar:
+
+```css
+.dropdown[popover] /* or id */ {
+  inset: auto;
+  inset-inline-end: anchor(end);
+  height: fit-content;
+  width: fit-content;
+}
+```
+
 Drip only positions the dropdown.
 Its contents are not styled any different from content outside the dropdown.
 You can use the CSS target `.dropdown>[popover]` to specially style the content.
 
 ### Forms
 
-Forms can be created without using Drip's form classes.
-Use the form classes when multiple elements should be kept together.
+Form elements in the normal block flow should be wrapped by a `.form-group` to apply proper spacing.
+The `.form-group` class may be omitted where the block flow and spacing are unusual; for example, in a website navbar.
+The following example is for form elements in the main content.
 
 ```html
 <div class="row">
@@ -95,7 +108,7 @@ Use the form classes when multiple elements should be kept together.
   <div class="form-group">
     <label for="time">Time</label>
     <input type="time" id="time" name="time">
-    <p class="help-text">This is help text.</p>
+    <small class="text-muted">This is help text.</small>
   </div>
 </div>
 ```

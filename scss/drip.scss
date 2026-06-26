@@ -2,11 +2,10 @@
 @use "vars";
 
 @use "components/dialog";
-@use "components/dialog-alt";
+@use "components/dropdown";
+@use "components/dropdown-alt";
 @use "components/table";
-@use "components/table-alt";
 @use "document/document-blocks";
-@use "document/document-blocks-alt";
 @use "document/document-inline";
 @use "document/document-layout";
 @use "document/document-layout-alt";

@@ -1,0 +1,13 @@
+@use "../vars" as *;
+
+.sideways-lr, .vertical-lr {
+  .dropdown > button::after {
+    transform: rotate(270deg);
+  }
+}
+
+.sideways-rl, .vertical-rl {
+  .dropdown > button::after {
+    transform: rotate(90deg);
+  }
+}

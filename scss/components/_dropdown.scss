@@ -1,0 +1,30 @@
+@use "../mixins" as *;
+@use "../vars" as *;
+
+.dropdown {
+  white-space: nowrap;
+  overflow-wrap: break-word;
+
+  & > button {
+    &::after {
+      @include icon(var(#{$css-var-prefix}icon-arrow), var(#{$css-var-prefix}color-link));
+      content: "";
+      display: inline-block;
+      height: var(#{$css-var-prefix}text-size-small);
+      width: var(#{$css-var-prefix}text-size-small);
+      vertical-align: center;
+    }
+
+    &:hover::after {
+      @include icon(var(#{$css-var-prefix}icon-arrow), var(#{$css-var-prefix}color-background));
+      height: var(#{$css-var-prefix}text-size-small);
+      width: var(#{$css-var-prefix}text-size-small);
+    }
+  }
+
+  & > [popover] {
+    @include modal;
+    position-area: end center;
+    inline-size: 100%;
+  }
+}

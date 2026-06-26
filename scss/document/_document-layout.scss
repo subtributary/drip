@@ -1,16 +1,5 @@
 @use "../vars" as *;
 
-html {
-  font-family: sans-serif;
-  font-size: var(#{$css-var-prefix}text-size);
-  line-height: var(#{$css-var-prefix}text-line-height);
-}
-
-body {
-  background-color: var(#{$css-var-prefix}color-background);
-  color: var(#{$css-var-prefix}color-text);
-}
-
 .container,
 .container-full {
   padding: var(#{$css-var-prefix}spacing);
@@ -18,7 +7,7 @@ body {
 
 .container {
   margin-inline: auto;
-  max-width: var(#{$css-var-prefix}container-size);
+  max-inline-size: var(#{$css-var-prefix}container-size);
 }
 
 .row {
@@ -33,6 +22,23 @@ body {
   }
 }
 
+html {
+  font-family: sans-serif;
+  font-size: var(#{$css-var-prefix}text-size);
+  line-height: var(#{$css-var-prefix}text-line-height);
+}
+
+body {
+  background-color: var(#{$css-var-prefix}color-background);
+  color: var(#{$css-var-prefix}color-text);
+}
+
+article,
+header,
+main {
+  margin-block-end: var(#{$css-var-prefix}spacing);
+}
+
 header > .container,
 header > .container-full,
 footer > .container,
@@ -41,13 +47,6 @@ footer > .container-full {
   align-items: center;
   gap: 0 var(#{$css-var-prefix}spacing);
   justify-content: space-between;
-}
-
-header,
-footer {
-  * {
-    margin: 0;
-  }
 }
 
 header > .container,
